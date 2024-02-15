@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="h2 text-center">My <b class="text-warning"> Profile</b> <i class="fa fa-users"></i> </div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-12">
+                {% if profile %}
+                {% for x in profile %}
+                <div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{x.ppic}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title h2">{{x.name}}</h5>
+          <p class="card-text">
+              <b>DOB:</b>{{x.dob}}</p>
+              <b>Mobile:</b>{{x.mobile}}</p>
+              <b>Email:</b>{{x.email}}</p>
+              <b>Password:</b>{{x.passwd}}</p>
+              <b>Address:</b>/{{x.address}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="col-sm-12">
+                <form method="post"  enctype="multipart/form-data">
+            {% csrf_token %}
+            Name <input type="text" placeholder="Enter Your Name.." class="form-control" name="name" />
+            Date Of Birth*<input type="date" name="dob" required class="form-control" placeholder="DD/MM/YYYY"/>
+            Mobile No <input type="text" placeholder="Enter Your Mobile No.." class="form-control" name="mobile"/>
+            Password <input type="password" placeholder="Enter Your password.." class="form-control" name="passwd"/>
+            Profile <input type="file" class="form-control" name="fu"/>
+            Address<textarea class="form-control" name="address" placeholder="Enter Your address.."></textarea>
+        </br><input type="submit" value="update" class="btn btn-warning form-control"/>
+
+        </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+<br><br>
+{% endblock %}

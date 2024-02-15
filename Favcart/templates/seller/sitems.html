@@ -1,0 +1,122 @@
+{% extends 'sbase.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+  <!-- HEADER -->
+  <header id="main-header" class="text-white bg-warning py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1><i class="fa fa-pencil"></i> Items</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH -->
+  <section id="search" class="bg-light mb-4 py-4">
+    <div class="container">
+
+      <div class="row">
+        <form>
+        <div class="col-md-6 ml-auto">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Iteam..." />
+            <div class="input-group-append">
+              <button class="btn btn-warning">Search</button>
+            </div>
+          </div>
+        </div>
+        </form>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- POSTS -->
+  <main id="posts">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h4>Our Items</h4>
+            </div>
+            <table class="table table-striped">
+              <thead class="thead-dark bg-dark text-light">
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>price</th>
+                  <th>original price</th>
+                  <th>item pic</th>
+                  <th>Data</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+             {% for n in item %}
+                <tr>
+                  <td>{{n.id}}</td>
+                  <td>{{n.iteamname}}</td>
+                  <td>{{n.category}}</td>
+                  <td>{{n.price}}</td>
+                  <td>{{n.disprice}}</td>
+                  <td><img src="/static/{{n.ppic}}" height="40px" width="40px"></td>
+                  <td>{{n.created_at}}</td>
+                  <td>
+                    <a href="{% url 'edit_iteam' n.id %}" class="btn btn-warning">
+                      <i class="fa fa-angle-double-right"></i> Edit Item
+                    </a>
+                  </td>
+                </tr>
+             {% endfor %}
+              </tbody>
+            </table>
+
+            <!-- PAGINATION -->
+            <nav class="ml-4">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a href="#" class="page-link">Previous</a>
+                </li>
+                <li class="page-item active">
+                  <a href="#" class="page-link">1</a>
+                </li>
+                <li class="page-item">
+                  <a href="#" class="page-link">2</a>
+                </li>
+                <li class="page-item">
+                  <a href="#" class="page-link">3</a>
+                </li>
+                <li class="page-item">
+                  <a href="#" class="page-link">next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+  </script>
+
+{% endblock %}

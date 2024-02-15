@@ -1,0 +1,95 @@
+{% extends 'sbase.html' %}
+{% load static %}
+
+
+{% block content %}
+ <!-- HEADER -->
+  <header id="main-header" class="text-white bg-warning py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1><i class="fa fa-briefcase"></i> Order</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH -->
+  <section id="search" class="bg-light mb-4 py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ml-auto">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Order..." />
+            <div class="input-group-append">
+              <button class="btn btn-warning">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <main id="categories">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h4>Name of Order user and details of Iteam</h4>
+            </div>
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>#</th>
+                  <th>user Id</th>
+
+                  <th>price</th>
+                  <th>Discount price</th>
+                  <th>item image</th>
+                  <th>Item category</th>
+                  <th>Item name</th>
+
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+            {% if pendingorder %}
+            {% for x in pendingorder %}
+                <tr>
+                  <td>{{x.1}}</td>
+                  <td>{{x.4}}</td>
+<!--                  <td>gideon@random.com</td>-->
+                  <td>{{x.9}}</td>
+                  <td>{{x.10}}-/</td>
+                  <td><img src="/static/{{x.12}}" class="img-thumbnail" style="max-height:100px;"/></td>
+                  <td>{{x.8}}</td>
+                  <td>{{x.7}}</td>
+
+                  <td>
+
+                      <i class="fa fa-angle-double-right"></i>
+                    <label class="control-label ">change order status</label>
+                      <select class="form-control">
+                        <option value="1">pending</option>
+                        <option value="2">reject</option>
+                        <option value="3">Approve</option>
+                        <option value="4">Delievered</option>
+                      </select>
+                    <button class="btn btn-success">Go</button>
+                  </td>
+                </tr>
+            {% endfor %}
+            {% endif %}
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+

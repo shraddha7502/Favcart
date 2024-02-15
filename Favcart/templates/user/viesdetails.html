@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="row">
+    <div class="h1 text-center pt-2">
+    Details about products
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-12">
+                {% if d %}
+                {% for x in  d %}
+                <!--start card --->
+
+                <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/static/{{x.ppic}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{x.iteamname}} ({{x.category}})</h5>
+        <p class="card-text">{{x.description}}</p>
+          <div style="height:40px;width:40px;background:{{x.color}}"></div>
+          <i class="btn btn-outline-danger"><i class="fa fa-inr"></i><s>{{x.disprice}}/-</s></i>
+          <i class="btn btn-outline-success"><i class="fa fa-inr"></i>{{x.price}}/-</i>
+        <p class="card-text"><small class="text-muted">{{x.created_at}} </small></p>
+          <a href="/user/process?pid={{x.id}}&bn=order" class="btn btn-warning rounded">Buy now</a>
+          <a href="/user/process?pid={{x.id}}&bn=cart"  target="_blank "
+             class="btn btn-warning rounded">Cart<i class="fa fa-shopping-cart"></i></a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+                <!--end card --->
+                 {% endfor %}
+                 {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

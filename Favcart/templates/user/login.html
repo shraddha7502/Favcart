@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4 border border-warning border-2 bg-light p-4 rounded">
+            <h3 class="mb-5">Sign in</h3>
+   <form method="post" action="http://127.0.0.1:8000/user/logindata" >
+            {% csrf_token %}
+
+            <div class="form-outline mb-4">
+                <label class="fs-4" name="uname">Email:</label>
+              <input type="email"  class="form-control form-control-md" name="email" />
+
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="fs-4" name="passwd">Password:</label>
+              <input type="password" class="form-control form-control-md" name="passwd" />
+
+            </div>
+                   <input name="submit" type="submit" value="login" class="btn btn-warning">
+
+</form>
+
+
+
+
+
+          </div>
+          </div>
+<div class="col-sm-4"></div>
+{% endblock %}

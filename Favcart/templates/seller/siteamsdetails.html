@@ -1,0 +1,129 @@
+{% extends 'sbase.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+  <!-- HEADER -->
+  <header id="main-header" class="text-white bg-primary py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1><i class="fa fa-info-circle"></i> Item One</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ACTIONS -->
+  <section id="actions" class="bg-light mb-4 py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <a
+            href="/sindex"
+            class="btn btn-block btn-light">
+            <i class="fa fa-arrow-left"></i>Back for Dashboard
+          </a>
+        </div>
+<form action="" method="post" enctype="multipart/form-data">
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-success" > <i class="fa fa-pencil"></i> Update items</button>
+        </div>
+<br>
+
+           </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <main id="details">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h4>Edit Item</h4>
+            </div>
+            <div class="card-body">
+
+
+
+                {% csrf_token %}
+                 {% for y in iteam %}
+                <div class="col-md-3">
+          <a
+            href="{% url 'delete_iteam' y.id %}" class="btn btn-block btn-danger">
+            <i class="fa fa-trash"></i> Delete Item
+          </a>
+        </div>
+
+                <div class="form-group">
+                  <label >title</label>
+                  <input type="text" class="form-control" value="{{ y.iteamname }}" name="iteamname" />
+                </div>
+                   <div class="form-group">
+                  <label >price</label>
+                  <input type="text" class="form-control" value="{{ y.price }}" name="price" />
+                </div>
+                   <div class="form-group">
+                  <label >discount price</label>
+                  <input type="text" class="form-control" value="{{ y.disprice }}" name="disprice" />
+                </div>
+                 <div class="form-group">
+                  <label for="image">item image</label>
+                  <div class="custom-file">
+                    <img src="/static/{{y.ppic}}" height="100px" width="100px" class="border border-dark"><br>
+                    <input type="file" id="image" class="custom-file-input" placeholder="enviar" name="image"/>
+                    <label for="image" class="custom-file-label">Choose File</label>
+                  </div>
+                  <small class="text-muted">max size  3mb</small>
+                </div>
+                <div class="form-group">
+                  <label >Description of Item</label>
+                  <textarea name="editPostEditor" class="form-control" name="description">
+                     {{ y.description }}
+                  </textarea>
+                </div>
+                 {% endfor %}
+                <div class="form-group">
+                  <label >Category</label>
+                  <select class="form-control" name="category">
+
+                    {% for x in category %}
+                   <option value="{{x.category}}">{{x.category}}</option>
+                 {% endfor %}
+
+                  </select>
+                </div>
+
+
+                </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+
+  <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+
+    // Turn simple editor to modern editor
+    CKEDITOR.replace('editPostEditor');
+  </script>
+
+{% endblock %}

@@ -1,0 +1,392 @@
+{% extends 'abase.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="photo.png" alt="Logo" />
+            <h2>FAV<span class="danger">CART</span></h2>
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <a href="#" class="active">
+            <span class="material-icons-sharp"> dashboard </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/product/">
+            <span class="fa fa-product-hunt">  </span>
+            <h3>Products</h3>
+          </a>
+         <a href="catagory.html">
+
+            <span class="fa fa-list-alt">  </span>
+            <h3>Catagory</h3>
+          </a>
+          <a href="/myapp/seller.html">
+            <span class="material-icons-sharp"> person_outline </span>
+            <h3>Seller</h3>
+          </a>
+          <a href="#">
+            <span class="fa fa-shopping-cart"> </span>
+            <h3>Orders</h3>
+          </a>
+
+          <a href="#">
+            <span class="material-icons-sharp"> insights </span>
+            <h3>Analytics</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp"> mail_outline </span>
+            <h3>Messages</h3>
+            <span class="message-count">26</span>
+          </a>
+
+          <a href="#">
+            <span class="material-icons-sharp"> report_gmailerrorred </span>
+            <h3>Reports</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp"> settings </span>
+            <h3>Settings</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp"> add </span>
+            <h3>Add Product</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+
+      <main>
+        <h1>Dashboard</h1>
+
+<!--        <div class="date">-->
+<!--          <input type="date" />-->
+<!--        </div>-->
+
+        <div class="insights">
+          <!-- SALES -->
+          <div class="sales">
+             <span class="fa fa-product-hunt"> </span>
+            <div class="middle">
+              <div class="left">
+                <h2>Product</h2>
+<!--                <h1>$25,024</h1>-->
+              </div>
+
+              <div class="progress">
+<!--                <svg>-->
+<!--                  <circle cx="38" cy="38" r="36"></circle>-->
+<!--                </svg>-->
+<!--                <div class="number">-->
+<!--                  <p>81%</p>-->
+<!--                </div>-->
+              </div>
+            </div>
+            <small class="text-muted"> Last 24 hours </small>
+          </div>
+
+          <!-- EXPENSES -->
+          <div class="expenses">
+            <span class="fa fa-list-alt">  </span>
+            <div class="middle">
+              <div class="left">
+                <h2>Catagory</h2>
+<!--                <h1>$14,160</h1>-->
+              </div>
+              <div class="progress">
+<!--                <svg>-->
+<!--                  <circle cx="38" cy="38" r="36"></circle>-->
+<!--                </svg>-->
+<!--                <div class="number">-->
+<!--                  <p>62%</p>-->
+<!--                </div>-->
+              </div>
+            </div>
+            <small class="text-muted"> Last 24 hours </small>
+          </div>
+
+          <!-- INCOME -->
+          <div class="income">
+            <span class="fa fa-user-circle-o">  </span>
+            <div class="middle">
+              <div class="left">
+                <h2>Seller</h2>
+<!--                <h1>$10,864</h1>-->
+              </div>
+
+              <div class="progress">
+<!--                <svg>-->
+<!--                  <circle cx="38" cy="38" r="36"></circle>-->
+<!--                </svg>-->
+<!--                <div class="number">-->
+<!--                  <p>44%</p>-->
+<!--                </div>-->
+              </div>
+            </div>
+            <small class="text-muted"> Last 24 hours </small>
+          </div>
+            <div class="income">
+            <span class="fa fa-list-alt">  </span>
+            <div class="middle">
+              <div class="left">
+                <h2 >SubCatagory</h2>
+<!--                <h1>$10,864</h1>-->
+              </div>
+
+              <div class="progress">
+<!--                  <span class="  fa-duotone fa-bars-progress">  </span>-->
+<!--                <svg>-->
+<!--                  <circle cx="38" cy="38" r="36"></circle>-->
+<!--                </svg>-->
+<!--                <div class="number">-->
+<!--                  <p>74%</p>-->
+<!--                </div>-->
+              </div>
+            </div>
+            <small class="text-muted"> Last 24 hours </small>
+          </div>
+
+            <div class="income">
+            <span class="fa fa-shopping-cart">  </span>
+            <div class="middle">
+              <div class="left">
+                <h2>Orders</h2>
+<!--                <h1>$10,864</h1>-->
+              </div>
+
+              <div class="progress">
+<!--                <svg>-->
+<!--                  <circle cx="38" cy="38" r="36"></circle>-->
+<!--                </svg>-->
+<!--                <div class="number">-->
+<!--                  <p>50%</p>-->
+<!--                </div>-->
+              </div>
+            </div>
+            <small class="text-muted"> Last 24 hours </small>
+          </div>
+
+            <div class="income">
+            <span class="fa fa-user">  </span>
+            <div class="middle">
+              <div class="left">
+                <h2>Users</h2>
+<!--                <h1>$10,864</h1>-->
+              </div>
+
+              <div class="progress">
+<!--                <svg>-->
+<!--                  <circle cx="38" cy="38" r="36"></circle>-->
+<!--                </svg>-->
+<!--                <div class="number">-->
+<!--                  <p>64%</p>-->
+<!--                </div>-->
+              </div>
+            </div>
+            <small class="text-muted"> Last 24 hours </small>
+          </div>
+
+        </div>
+
+
+        <div class="recent-orders">
+          <h2>Recent Orders</h2>
+          <table id="recent-orders--table">
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Product Number</th>
+                <th>Payment</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <!-- Add tbody here | JS insertion -->
+          </table>
+          <a href="#">Show All</a>
+        </div>
+      </main>
+
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+          <div class="theme-toggler">
+            <span class="material-icons-sharp active"> light_mode </span>
+            <span class="material-icons-sharp"> dark_mode </span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Hey, <b>Bruno</b></p>
+              <small class="text-muted">Admin</small>
+            </div>
+            <div class="profile-photo">
+              <img src="photo.png" alt="Profile Picture" />
+            </div>
+          </div>
+        </div>
+
+<!--        <div class="recent-updates">-->
+<!--          <h2>Recent Updates</h2>-->
+<!--          &lt;!&ndash; Add updates div here | JS insertion &ndash;&gt;-->
+<!--        </div>-->
+
+<!--        <div class="sales-analytics">-->
+<!--          <h2>Sales Analytics</h2>-->
+<!--          <div id="analytics">-->
+<!--            &lt;!&ndash; Add items div here | JS insertion &ndash;&gt;-->
+<!--          </div>-->
+<!--          <div class="item add-product">-->
+<!--            <div>-->
+<!--              <span class="material-icons-sharp"> add </span>-->
+<!--              <h3>Add Product</h3>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+    </div>
+
+    <script src="./constants/recent-order-data.js"></script>
+    <script src="./constants/update-data.js"></script>
+    <script src="./constants/sales-analytics-data.js"></script>
+    <!--<script src="./index.js"></script>-->
+    <script>
+       // Executes when document is loaded
+document.addEventListener("DOMContentLoaded", (ev) => {
+  // Recent Orders Data
+  document.getElementById("recent-orders--table").appendChild(buildTableBody());
+
+  // Updates Data
+  document
+    .getElementsByClassName("recent-updates")
+    .item(0)
+    .appendChild(buildUpdatesList());
+
+  // Sales Analytics
+  const salesAnalytics = document.getElementById("analytics");
+  buildSalesAnalytics(salesAnalytics);
+});
+
+// Document Builder
+const buildTableBody = () => {
+  const recentOrderData = RECENT_ORDER_DATA;
+
+  const tbody = document.createElement("tbody");
+
+  let bodyContent = "";
+  for (const row of recentOrderData) {
+    bodyContent += `
+      <tr>
+        <td>${row.productName}</td>
+        <td>${row.productNumber}</td>
+        <td>${row.payment}</td>
+        <td class="${row.statusColor}">${row.status}</td>
+        <td class="primary">Details</td>
+      </tr>
+    `;
+  }
+
+  tbody.innerHTML = bodyContent;
+
+  return tbody;
+};
+
+const buildUpdatesList = () => {
+  const updateData = UPDATE_DATA;
+
+  const div = document.createElement("div");
+  div.classList.add("updates");
+
+  let updateContent = "";
+  for (const update of updateData) {
+    updateContent += `
+      <div class="update">
+        <div class="profile-photo">
+          <img src="${update.imgSrc}" />
+        </div>
+        <div class="message">
+          <p><b>${update.profileName}</b> ${update.message}</p>
+          <small class="text-muted">${update.updatedTime}</small>
+        </div>
+      </div>
+    `;
+  }
+
+  div.innerHTML = updateContent;
+
+  return div;
+};
+
+const buildSalesAnalytics = (element) => {
+  const salesAnalyticsData = SALES_ANALYTICS_DATA;
+
+  for (const analytic of salesAnalyticsData) {
+    const item = document.createElement("div");
+    item.classList.add("item");
+    item.classList.add(analytic.itemClass);
+
+    const itemHtml = `
+      <div class="icon">
+        <span class="material-icons-sharp"> ${analytic.icon} </span>
+      </div>
+       <div class="icon">
+        <span class="material-icons-sharp"> ${catagory.icon} </span>
+      </div>
+      <div class="right">
+        <div class="info">
+          <h3>${analytic.title}</h3>
+          <small class="text-muted"> Last 24 Hours </small>
+        </div>
+        <h5 class="${analytic.colorClass}">${analytic.percentage}%</h5>
+        <h3>${analytic.sales}</h3>
+      </div>
+    `;
+
+    item.innerHTML = itemHtml;
+
+    element.appendChild(item);
+  }
+};
+
+// Document operation functions
+const sideMenu = document.querySelector("aside");
+const menuBtn = document.querySelector("#menu-btn");
+const closeBtn = document.querySelector("#close-btn");
+const themeToggler = document.querySelector(".theme-toggler");
+
+// Show Sidebar
+menuBtn.addEventListener("click", () => {
+  sideMenu.style.display = "block";
+});
+
+// Hide Sidebar
+closeBtn.addEventListener("click", () => {
+  sideMenu.style.display = "none";
+});
+
+// Change Theme
+themeToggler.addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme-variables");
+
+  themeToggler.querySelector("span:nth-child(1)").classList.toggle("active");
+  themeToggler.querySelector("span:nth-child(2)").classList.toggle("active");
+});
+    </script>
+  </body>
+
+{% endblock %}
+
